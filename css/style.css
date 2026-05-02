@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: full;
+    height: 100vh;
+}
+
+.lettersSection{
+    display: flex;
+  
+    width: 100%;
+    min-height: 60%;
+    justify-content: center;
+    align-items: center;
+   
+    background-color: rgb(100, 100, 100);
+    padding: 24px;
+     
+}
+
+.letters{
+    display: flex;
+    width: 100;
+   
+    gap: 8px;
+   justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.letter{
+    display: flex;
+  
+    text-transform: uppercase;
+    width: 60px;
+    height: 60px;
+    
+    background-color: blue;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.inputDiv{
+    background-color: yellowgreen;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 16px;
+    outline: none;
+    border: none;
+}

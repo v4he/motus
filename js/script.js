@@ -2,7 +2,7 @@ const lettersDiv = document.querySelector('.letters');
 
 
 
-let letter = 'porc';
+let word = 'pryttttereoizoeiztzetzet';
 
 
 // lettersDiv.appendChild(h1)
@@ -10,10 +10,12 @@ let letter = 'porc';
 
 // console.log(h1)
 
-letter.split('').forEach(element => {
+word.split('').forEach(element => {
     const h1 = document.createElement('h1')
     h1.className = 'letter'
     h1.innerText = `${element}`
     lettersDiv.appendChild(h1)
 })
+
+
 

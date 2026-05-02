@@ -11,7 +11,15 @@
 <body>
 
     <section>
-        <div class="letters"></div>
+        <div class="lettersSection">
+            <div class="letters"></div>
+        </div>
+        
+        <div class="inputDiv">
+            <input type="text">
+        </div>
+
+
     </section>
 
     <script src="js/script.js"></script>
