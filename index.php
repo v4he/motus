@@ -15,9 +15,10 @@
             <div class="letters"></div>
         </div>
         
-        <div class="inputDiv">
-            <input type="text">
-        </div>
+        <div method="post" class="inputDiv">
+            <input class="input" type="text">
+            <input class="ok" type="submit" value="ok">
+</div>
 
 
     </section>

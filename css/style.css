@@ -27,7 +27,7 @@ section{
 
 .letters{
     display: flex;
-    width: 100;
+    width: 100%;
    
     gap: 8px;
    justify-content: center;
@@ -51,12 +51,15 @@ section{
 
 
 .inputDiv{
+   
     background-color: yellowgreen;
     width: 100%;
     flex: 1;
     display: flex;
+        gap: 8px;
     justify-content: center;
     align-items: center;
+
 }
 
 input{
