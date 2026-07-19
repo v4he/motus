@@ -14,14 +14,25 @@
         <div class="lettersSection">
             <div class="letters"></div>
         </div>
+
         
-        <div method="post" class="inputDiv">
+        <div class="inputDiv">
+            <div>
+            <p></p>
+        </div>
+        <div>
             <input class="input" type="text">
             <input class="ok" type="submit" value="ok">
-</div>
+        </div>
+            
+        </div>
 
 
     </section>
+
+    <div class="startDiv">
+        <button class="startBtn">start</button>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

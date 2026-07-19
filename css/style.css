@@ -19,14 +19,15 @@ section{
     min-height: 60%;
     justify-content: center;
     align-items: center;
-   
-    background-color: rgb(100, 100, 100);
+    color: white;
+    background-color: rgb(93, 93, 93);
     padding: 24px;
      
 }
 
 .letters{
     display: flex;
+    flex-direction: column;
     width: 100%;
    
     gap: 8px;
@@ -35,9 +36,15 @@ section{
 }
 
 
+.row{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
 .letter{
     display: flex;
-  
+   flex-direction: row;
     text-transform: uppercase;
     width: 60px;
     height: 60px;
@@ -52,13 +59,14 @@ section{
 
 .inputDiv{
    
-    background-color: yellowgreen;
+    background-color: rgb(37, 37, 37);
     width: 100%;
     flex: 1;
     display: flex;
         gap: 8px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 }
 
@@ -68,4 +76,38 @@ input{
     border-radius: 16px;
     outline: none;
     border: none;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    height: 60px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: rgb(28, 28, 28);
+}
+
+.startDiv{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(53, 53, 53);
+    justify-content: center;
+    align-items: center;
+}
+
+.startBtn{
+    height: 50px;
+    width: 200px;
+}
+
+p{
+    color: red;
 }
