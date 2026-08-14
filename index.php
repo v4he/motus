@@ -11,20 +11,35 @@
 <body>
 
     <section>
+        <header>
+            <div class="scoreDiv">
+                <h3 class="score">score:</h3>
+                <h3 class="scoreNumber">0</h3>
+            </div>
+
+
+            <div class="loginDiv">
+                <div class="btnDiv">
+                    <a class="loginText" href="login.php">se conecter</a>
+                </div>
+                  
+                
+            </div>
+        </header>
         <div class="lettersSection">
             <div class="letters"></div>
         </div>
 
-        
+
         <div class="inputDiv">
             <div>
-            <p></p>
-        </div>
-        <div>
-            <input class="input" type="text">
-            <input class="ok" type="submit" value="ok">
-        </div>
-            
+                <p></p>
+            </div>
+            <div>
+                <input style="padding: 0 16px;" class="input" type="text">
+                <input class="ok" type="submit" value="ok">
+            </div>
+
         </div>
 
 

@@ -1,8 +1,14 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 
-$db_word = 'apple';
 
+
+
+require_once 'Database.php';
+
+
+$database = new Database();
 
 
 
@@ -10,24 +16,58 @@ if (isset($_POST['action'])) {
 
     $action = $_POST['action'];
 
+
+
+
+    
+
+
+
     if ($action === "start") {
+
+        $db_word = $database->getRandomWord();
+        $_SESSION['db_word'] = $db_word;
+
         $length = strlen($db_word);
         $letterOne = $db_word[0];
         $mod = 'start';
 
-        echo json_encode([$length, $letterOne, $mod]);
-    } else {
-        $mod = 'word';
-
-        
+        echo json_encode([$length, $letterOne, $mod, $db_word]);
+    }
+    
+    else {
+        $db_word = $_SESSION['db_word'];
+    
+        $mod = 'word';        
         $frontWord = $action;
         $word = $action;
-        
         $copyWordDb = $db_word;
 
         $result = [];
 
+
+        if (!$database->isWordValid($frontWord)) {
+        echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'Invalid word']);
+        exit;
+    }
+
+
+        if($db_word === $frontWord){
+           
+        
         for ($i = 0; $i < strlen($db_word); $i++) {
+            $result[] = 'red';
+        } 
+
+
+            echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'true']);
+            exit();
+        }
+
+
+
+        for ($i = 0; $i < strlen($db_word); $i++) {
+            
             if ($frontWord[$i] === $db_word[$i]) {
                 $result[] = 'red';
                 $copyWordDb[$i] = '-';
@@ -36,8 +76,7 @@ if (isset($_POST['action'])) {
             else{
                 $result[] = 'blue';
             }
-            
-        }
+        } 
 
         $indexArr = [];
 
