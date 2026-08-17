@@ -159,7 +159,7 @@ class Database
 
     public function getUsers()
     {
-        $stmt = $this->pdo->prepare('SELECT * FROM users');
+        $stmt = $this->pdo->prepare('SELECT * FROM users ORDER BY score DESC');
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $users;

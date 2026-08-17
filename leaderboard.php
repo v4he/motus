@@ -36,7 +36,7 @@ $users = $db->getUsers();
 
         <?php for ($i = 0; $i < count($users); $i++): ?>
             <div class="userDiv">
-                <h1 class="number"> <?php echo  $users[$i]['id']?> </h1>
+                <h1 class="number"> <?php echo $i +1  ?> </h1>
                 <h1><?php echo $users[$i]['username'] ?></h1>
                 <h1>score: <?php echo $users[$i]['score'] ?></h1>
             </div>
