@@ -11,11 +11,11 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(44, 44, 44);
+   background-color: rgb(44, 44, 44);
     height: 100vh;
 }
 
-.login{
+.register{
     padding: 16px;
     border-radius: 16px;
     background-color: rgb(36, 36, 36);
@@ -46,10 +46,11 @@ button{
     border: 0px solid black;
 }
 
-.creeCompte{
+
+a{
     display: block;
     margin-top: 12px;
-   
     color: white;
     font-size: 12px;
 }
+

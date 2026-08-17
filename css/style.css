@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    
 }
 
 section{
@@ -10,18 +11,19 @@ section{
     flex-direction: column;
     width: full;
     height: 100vh;
+   
 }
 
 .lettersSection{
     display: flex;
   
     width: 100%;
-    min-height: 65%;
+    min-height: 60%;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: rgb(44, 44, 44);
-    padding: 24px;
+    padding: 0 24px;
      
 }
 
@@ -59,7 +61,7 @@ section{
 
 .inputDiv{
    
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(44, 44, 44);
     width: 100%;
     flex: 1;
     display: flex;
@@ -70,12 +72,37 @@ section{
 
 }
 
-input{
+.input{
+    background-color: transparent;
+    color: white;
     height: 50px;
     font-size: 30px;
     border-radius: 16px;
     outline: none;
     border: none;
+    
+}
+
+.ok{
+    background-color: transparent;
+    color: rgb(201, 201, 201);
+    height: 56px;
+    width: 56px;
+    border-radius: 16px;
+    font-size: 24px;
+    border-bottom: 0px solid black;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+
+.ok:hover{
+    transition: 0.1s;
+    opacity: 0.5;
+}
+
+.inputBorder{
+    border-bottom: 1px solid rgb(84, 84, 84);
 }
 
 h1{
@@ -106,23 +133,21 @@ h1{
 .startBtn{
     height: 50px;
     width: 200px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 0px solid rgb(134, 134, 134);
 }
 
 p{
     color: red;
 }
 
-.ok{
-    background-color: rgb(20, 20, 20);
-    color: white;
-    height: 56px;
-    width: 56px;
-    
-}
+
 
 header{
     display: flex;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(44, 44, 44);
     height: 62px;
     padding: 0 32px;
     align-items: center;
@@ -131,15 +156,19 @@ header{
 }
 
 .scoreDiv{
-    font-size: 24px;
+    font-size: 16px;
     display: flex;
-     font-style: italic;
-     color: white;
+   
+     color: rgb(255, 255, 255);
 }
 
 .score{
-   
+   color: rgb(201, 201, 201);
     margin-right: 4px;
+}
+
+.line{
+    color: rgb(192, 192, 192);
 }
 
 
@@ -153,4 +182,35 @@ header{
     color: white;
  
     text-decoration: none;
+}
+
+
+.logoutDiv{
+    display: flex;
+}
+
+
+.leaderHref{
+    color: rgb(201, 201, 201);
+  
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.leaderHref:hover{
+    opacity: 0.5;
+  transition: 0.1s;
+}
+
+
+.logoutText{
+    color: rgb(201, 201, 201);
+  
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.logoutText:hover{
+    opacity: 0.5;
+  transition: 0.1s;
 }

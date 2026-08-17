@@ -2,13 +2,13 @@ const lettersDiv = document.querySelector(".letters");
 const p = document.querySelector("p");
 const input = document.querySelector(".input");
 const ok = document.querySelector(".ok");
-const startBtn = document.querySelector(".startBtn");
-const startDiv = document.querySelector(".startDiv");
+
+const scoreNumber = document.querySelector('.scoreNumber')
 
 let startData;
 
-startBtn.addEventListener("click", () => {
-  startDiv.style.display = "none";
+function start () {
+  
 
   fetch("php/Game.php", {
     method: "POST",
@@ -19,7 +19,9 @@ startBtn.addEventListener("click", () => {
   })
     .then((res) => res.json())
     .then((data) => actionReponse(data));
-});
+};
+
+start()
 
 let count = 0;
 let waiting = true;
@@ -41,16 +43,18 @@ ok.addEventListener("click", () => {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `action=${encodeURIComponent(input.value)}`,
+      body: `action=${encodeURIComponent(input.value).toLowerCase()}`,
     })
       .then((res) => res.json())
       .then((data) => actionReponse(data));
   } else {
-    p.innerText = "length error";
+    p.innerText = "Longueur incorrecte";
     p.style.color = 'red'
     waiting = true;
   }
 });
+
+
 
 function actionReponse(data) {
   console.log(data);
@@ -59,6 +63,8 @@ function actionReponse(data) {
     lettersDiv.innerHTML = "";
     startData = data;
     console.log(startData);
+    console.log(startData)
+    scoreNumber.innerText = startData[4]
     for (let i = 0; i < 5; i++) {
       const row = document.createElement("div");
       row.className = "row";
@@ -81,9 +87,9 @@ function actionReponse(data) {
     const letterH1 = document.querySelectorAll("h1");
     let bool = true;
 
-    if(data[5] === "Invalid word" ){
+    if(data[5] === "Mot invalide" ){
       p.style.color = 'yellow'
-      p.innerText = "invalid word";
+      p.innerText = "Mot invalide";
       waiting = true
       
     }  
@@ -116,7 +122,11 @@ function actionReponse(data) {
           
 
           if (data[5] === "true") {
+
+
             setTimeout(() => {
+              scoreNumber.innerText = data[6]
+
               fetch("php/Game.php", {
                 method: "POST",
                 headers: {

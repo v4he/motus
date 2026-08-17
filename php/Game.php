@@ -12,6 +12,8 @@ $database = new Database();
 
 
 
+
+
 if (isset($_POST['action'])) {
 
     $action = $_POST['action'];
@@ -27,16 +29,21 @@ if (isset($_POST['action'])) {
 
         $db_word = $database->getRandomWord();
         $_SESSION['db_word'] = $db_word;
+        $userId = $_SESSION['userId'];
+
+        $score = $database->selectScore($userId);
 
         $length = strlen($db_word);
         $letterOne = $db_word[0];
         $mod = 'start';
 
-        echo json_encode([$length, $letterOne, $mod, $db_word]);
+        echo json_encode([$length, $letterOne, $mod, $db_word, $score]);
     }
     
     else {
         $db_word = $_SESSION['db_word'];
+
+        $action = trim($action);
     
         $mod = 'word';        
         $frontWord = $action;
@@ -47,7 +54,7 @@ if (isset($_POST['action'])) {
 
 
         if (!$database->isWordValid($frontWord)) {
-        echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'Invalid word']);
+        echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'Mot invalide']);
         exit;
     }
 
@@ -59,8 +66,14 @@ if (isset($_POST['action'])) {
             $result[] = 'red';
         } 
 
+            $userId = $_SESSION['userId'];
+            $score = $database->updateScore($userId);
 
-            echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'true']);
+            echo json_encode([$result, $word, $mod, $copyWordDb, $frontWord, 'true', $score]);
+
+            
+
+
             exit();
         }
 
